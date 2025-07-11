@@ -1,0 +1,25 @@
+enable
+configure terminal
+ipv6 unicast-routing
+interface loopback 10
+ip add 172.16.10.10 255.255.255.0
+ipv6 add 3001:abcd:abcd:10::10/128
+exit
+interface loopback 15
+ip add 172.16.15.15 255.255.255.0
+ipv6 add 3001:abcd:abcd:15::15/128
+exit
+
+router eigrp EXAMEN
+address-family ipv4 unicast autonomous-system 100
+network 172.16.10.0 0.0.0.255
+network 172.16.15.0 0.0.0.255
+af-interface Loopback 10
+passive-interface
+exit-af-interface
+exit-address-family
+address-family ipv6 unicast autonomous-system 100
+af-interface Loopback 10
+passive-interface
+exit-af-interface
+exit-address-family
