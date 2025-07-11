@@ -1,0 +1,14 @@
+{
+    "ietf-interfaces:interfaces": {
+        "interface": [
+            {
+                "name": "GigabitEthernet1",
+                "description": "VBox",
+                "type": "iana-if-type:ethernetCsmacd",
+                "enabled": true,
+                "ietf-ip:ipv4": {},
+                "ietf-ip:ipv6": {}
+            }
+        ]
+    }
+}
